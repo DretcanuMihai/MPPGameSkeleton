@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group 'org.myapp'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':MyAppModel')
+    implementation project (':MyAppPersistence')
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.13.1'
+
+    testImplementation('com.jayway.jsonpath:json-path')
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    runtimeOnly group: 'org.xerial', name: 'sqlite-jdbc', version: '3.34.0'
+
+    implementation 'org.javassist:javassist:3.28.0-GA'
+
+    implementation 'org.hibernate:hibernate-core:5.2.10.Final'
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+}

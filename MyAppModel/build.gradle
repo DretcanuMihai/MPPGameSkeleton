@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'myapp'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.hibernate:hibernate-core:5.2.10.Final'
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0'
+}
+
+test {
+    useJUnitPlatform()
+}

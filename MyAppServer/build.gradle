@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.myapp'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project (':MyAppModel')
+    implementation project (':MyAppServices')
+    implementation project (':MyAppPersistence')
+    implementation project (':MyAppNetworking')
+
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.20'
+
+    implementation 'org.javassist:javassist:3.28.0-GA'
+
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.16.1'
+    implementation 'org.hibernate:hibernate-core:5.2.10.Final'
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application{
+    mainClassName='StartServer'
+}

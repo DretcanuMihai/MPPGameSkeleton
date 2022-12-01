@@ -1,0 +1,9 @@
+rootProject.name = 'MyApp'
+include 'MyAppClient'
+include 'MyAppModel'
+include 'MyAppNetworking'
+include 'MyAppPersistence'
+include 'MyAppRestServices'
+include 'MyAppServer'
+include 'MyAppServices'
+
